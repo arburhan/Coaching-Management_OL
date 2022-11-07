@@ -8,14 +8,16 @@ const TopAboutUs = () => {
         <div className='bg-white text-black py-12 px-12'>
             <div>
                 <div className=" grid grid-rows:2 md:grid-cols-2 gap-12 items-center justify-center">
-                    <div className='playerPosition rounded-2xl'>
-                        <figure>
-                            <img className='rounded-2xl playerImage' src={aboutPlayerImage} alt="" />
-                        </figure>
-                        <span className='aboutPlayerButton'>
-                            <svg width="40" height="40" viewBox="0 0 29 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.5171 12.8434C29.1834 14.3831 29.1834 18.2316 26.5171 19.7713L6.94142 31.0756C4.27476 32.6155 0.941128 30.691 0.941128 27.6116L0.941129 5.00311C0.94113 1.92375 4.27476 -0.00072865 6.94143 1.53918L26.5171 12.8434Z" fill="#5468FF"></path></svg>
-                        </span>
-                    </div>
+                    <label htmlFor="aboutVideoModal">
+                        <div className='playerPosition rounded-2xl'>
+                            <figure>
+                                <img className='rounded-2xl playerImage' src={aboutPlayerImage} alt="" />
+                            </figure>
+                            <span className='aboutPlayerButton'>
+                                <svg width="40" height="40" viewBox="0 0 29 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.5171 12.8434C29.1834 14.3831 29.1834 18.2316 26.5171 19.7713L6.94142 31.0756C4.27476 32.6155 0.941128 30.691 0.941128 27.6116L0.941129 5.00311C0.94113 1.92375 4.27476 -0.00072865 6.94143 1.53918L26.5171 12.8434Z" fill="#5468FF"></path></svg>
+                            </span>
+                        </div>
+                    </label>
                     {/* <div className='player-wrapper'>
                         <ReactPlayer
                             className='react-player'
@@ -34,6 +36,28 @@ const TopAboutUs = () => {
                     </div>
                 </div>
             </div>
+            {/* # modal code */}
+            <>
+                <input type="checkbox" id="aboutVideoModal" className="modal-toggle" />
+                <div className="modal bg-[#f3f3f3b0] ">
+                    <div className="modal-box bg-white">
+                        <label htmlFor="aboutVideoModal" className="btn btn-xl btn-circle absolute right-2 top-2">✕</label>
+                        <h3 className="font-bold text-lg">এমন নিবেদিতপ্রাণ শিক্ষকদের সাথেই ভবিষ্যতটা সুনিশ্চিত হোক</h3>
+                        <div className='player-wrapper rounded-xl'>
+                            <div className=''>
+                                <ReactPlayer
+                                    className='react-player'
+                                    url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+                                    controls
+                                    volume
+                                    playIcon
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </>
+
         </div>
     );
 };
